@@ -1,0 +1,628 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.myContainer, .wrapper{
+  background-color: #000;
+  margin: 0;
+  width: 100%;
+  overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+
+/* Home Styles */
+
+.home-container {
+  max-height: 100%;
+  margin-bottom: 6em;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 1rem;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-family: 'Cyberpunk Is Not Dead', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-section p {
+  color: aqua;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-section {
+  margin: 10px 0;
+  padding: 20px;
+  /* background: #f9f9f9; */
+  border-radius: 8px;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.intro-section p{
+  font-size: 1.1rem;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-p{
+  margin-bottom: 20px;
+}
+
+.intro-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.intro-section ul li strong {
+  color: aqua;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media .social-icon {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.social-media .social-icon:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Pool.css */
+
+.pool-container {
+  background-color: #000; 
+  color: #fff; 
+  padding: 40px;
+  width: 100%;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.pool-title {
+  font-size: 3em; 
+  margin-bottom: 40px; 
+}
+
+.pool-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pool-card {
+  background-color: #1a1a1a; 
+  border: 2px solid #333; 
+  border-radius: 10px;
+  margin: 20px; 
+  padding: 20px;
+  width: 300px; 
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.pool-card:hover {
+  transform: scale(1.05);
+  background-color: #333; 
+}
+
+.pool-name {
+  display: flex;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.token-image {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.pool-price {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.liquidity-form {
+  background-color: #1a1a1a; /* Dark gray background for form */
+  border: 2px solid #333; /* Slightly lighter gray border */
+  border-radius: 10px;
+  margin-top: 40px;
+  padding: 20px;
+  width: 400px; 
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+.provide-button {
+  background-color: #000; 
+  border: 2px solid whitesmoke;
+  color: whitesmoke; 
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.provide-button:hover {
+  background-color: #333;
+}
+
+
+/* Send.css */
+.send-container {
+  background-color: #000; 
+  color: #fff; 
+  padding: 40px;
+  text-align: center;
+  width: 100%; 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.send-title {
+  font-size: 2.5em; 
+  margin-bottom: 30px; 
+  text-align: left; 
+  width: 100%; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  margin-bottom: 20px; 
+  width: 100%; 
+}
+
+label {
+  font-size: 1.2em; 
+  margin-bottom: 10px; 
+  text-align: left; 
+  width: 100%; 
+  color: #fff; 
+}
+
+.amount-input,
+.token-select,
+.network-select {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #555; 
+  border-radius: 5px; 
+  background-color: #000; 
+  color: #fff; 
+  margin-bottom: 20px; 
+}
+
+.token-select,
+.network-select {
+  appearance: none; /* Remove default styling */
+}
+
+.token-image {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 5px; 
+}
+
+.send-button {
+  background-color: #000; 
+  border: 2px solid whitesmoke; 
+  color: whitesmoke; 
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; 
+  border-radius: 5px; 
+  margin-top: 20px; 
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.send-button:hover {
+  background-color: #333; /* Background color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .send-container {
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  .send-title {
+    font-size: 2em; /* Adjust font size */
+  }
+
+  .form-group {
+    align-items: stretch; /* Full width items */
+  }
+
+  .amount-input,
+  .token-select,
+  .network-select {
+    width: 100%; /* Full width */
+  }
+}
+
+/* Airdrop.css */
+
+.airdrop-container {
+  background-color: #000; 
+  color: #fff; 
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto; 
+  text-align: left; 
+  overflow-y: auto; 
+}
+
+.airdrop-title {
+  font-size: 3em; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.airdrop-text {
+  font-size: 1.2em; 
+  margin-bottom: 20px; 
+}
+
+.highlight {
+  color: #FFD700; 
+}
+
+.airdrop-subtitle {
+  font-size: 2em; 
+  margin-top: 30px; 
+  margin-bottom: 20px; 
+}
+
+.airdrop-list, .airdrop-steps {
+  margin-bottom: 20px; 
+}
+
+.airdrop-list li, .airdrop-steps li {
+  margin-bottom: 10px; 
+}
+
+.airdrop-social {
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+}
+
+.airdrop-social-list {
+  list-style-type: none; 
+  padding: 0;
+}
+
+.airdrop-social-list li {
+  margin-bottom: 10px; 
+}
+
+.airdrop-social-list a {
+  color: #1E90FF; 
+  text-decoration: none; 
+}
+
+.airdrop-social-list a:hover {
+  text-decoration: underline; 
+}
+
+.faq {
+  margin-top: 20px; 
+}
+
+.faq-question {
+  font-size: 1.5em; 
+  margin-top: 20px; 
+}
+
+.faq-answer {
+  font-size: 1.2em; 
+  margin-top: 10px; 
+}
+
+/* swap.css */
+.swap-container {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.swap-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group input {
+  padding: 10px;
+  width: 100%;
+  background-color: #222;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #444;
+  border-color: #444;
+  cursor: not-allowed;
+}
+
+
+/* Stake.css */
+
+.stake-container {
+  background-color: #000; 
+  color: #fff; 
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto; 
+  text-align: left; 
+  overflow-y: auto; 
+}
+
+.stake-title {
+  font-size: 3em; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.stake-description {
+  font-size: 1.2em; 
+  margin-bottom: 20px; 
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; 
+  border: 1px solid #555; 
+  border-radius: 5px; 
+  background-color: #000; 
+  color: #fff; 
+}
+
+.validator-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  display: flex;
+  background-color: #1a1a1a; 
+  border: 2px solid #333; 
+  padding: 10px 0; 
+}
+
+.table-column {
+  flex: 1;
+  padding: 10px;
+  text-align: left; /* Align text to the left */
+}
+
+.table-row {
+  display: flex;
+  background-color: #1a1a1a; 
+  border-bottom: 1px solid #333; 
+  transition: background-color 0.3s; 
+}
+
+.table-row:hover {
+  background-color: #333; 
+}
+
+.table-row .table-column {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Governance.css */
+
+
+.governance-main-container {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+  padding: 40px;
+  max-width: 90%; 
+  margin: 0 auto; 
+  text-align: left; 
+  overflow-y: auto; 
+}
+
+.governance-title {
+  font-size: 3em; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.governance-description {
+  font-size: 1.2em;
+  margin-bottom: 20px; 
+}
+
+.proposal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.proposal-table-header {
+  display: flex;
+  background-color: #1a1a1a; /* Dark gray background for header */
+  border: 2px solid #333; 
+  padding: 10px 0; 
+}
+
+.proposal-table-column {
+  flex: 1;
+  padding: 10px;
+  text-align: left; 
+}
+
+.proposal-table-row {
+  display: flex;
+  background-color: #1a1a1a; /* Dark gray background for rows */
+  border-bottom: 1px solid #333; 
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.proposal-table-row:hover {
+  background-color: #333; 
+}
+
+.proposal-table-row .proposal-table-column {
+  flex: 1;
+  padding: 10px;
+}
+
+/* glitch animation */
+
+.glitch {
+  /* font-size: 1.5rem; */
+  color: #fff;
+  animation: glitch 0.5s linear infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: -2.5px -2.5px 0 #6b0b7c, 
+            2.5px 2.5px 0 rgb(0, 255, 255);
+  }
+  25% {
+    text-shadow: 2.5px 2.5px 0 #470970, 
+            -2.5px -2.5px 0 rgb(0, 255, 255);
+  }
+  50% {
+    text-shadow: 2.5px -2.5px 0 #4b0981, 
+            -2.5px 2.5px 0 rgb(0, 255, 255);
+  }
+  75% {
+    text-shadow: 2.5px 2.5px 0 #ffee00, 
+            2.5px -2.5px 0 rgb(0, 255, 255);
+  }
+}
+
+
+

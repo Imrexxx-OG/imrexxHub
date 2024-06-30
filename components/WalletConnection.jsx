@@ -26,7 +26,7 @@ export default function WalletConnection() {
                 localStorage.setItem('isConnected', true);
                 localStorage.setItem('account', account);
 
-                window.location.href = "newpage.html"; // Change to the desired URL
+                window.location.reload(); // refresh the page
 
             } catch (error) {
                 console.error("Error connecting:", error);

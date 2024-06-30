@@ -4,7 +4,7 @@ import WalletConnection from './WalletConnection'
 
 const Home = () => {
     return (
-        <div className="wrapper">
+        <div className="home-wrapper">
             <div className='home-container'>
                 <section id="hero" className="hero-section">
                     <div>
@@ -40,7 +40,7 @@ const Home = () => {
                     <a href="#" className="social-icon">Twitter</a>
                     <a href="#" className="social-icon">LinkedIn</a>
                 </div>
-            </footer>
+        </footer>
     </div>
     );
 };

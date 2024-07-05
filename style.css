@@ -108,7 +108,7 @@ nav.dark {
 
 /* Hamburger menu styles */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
   margin: 10px;

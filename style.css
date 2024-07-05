@@ -111,6 +111,81 @@ nav.dark {
 }
 
 
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  transition: all 0.3s;
+}
+
+.sidebar-open .hamburger span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.sidebar-open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-open .hamburger span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: black;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar-open nav {
+    left: 0;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar.hide {
+    display: none;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+}
+
+
+
 
 /* Hub Styles */
 

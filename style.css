@@ -5,16 +5,14 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  margin: 0;
-  padding: 0;
   font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   display: flex;
-  height: 100vh; 
+  height: 100vh;
   width: 100%;
 }
 
@@ -34,42 +32,41 @@ a {
 }
 
 /* Sidebar Styles */
-
 nav {
   padding: 10px;
   height: 100%;
   width: 16%;
   box-shadow: 0px 1px 4px white;
   z-index: 999;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   box-sizing: border-box;
-
+  position: relative;
 }
 
-.dark h1{
+.dark h1 {
   font-family: 'Cyberpunk Is Not Dead', sans-serif;
 }
 
 .navbar {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .navbar a {
   display: flex;
   align-items: center;
-  text-decoration: none; 
+  text-decoration: none;
   color: inherit;
 }
 
 .navbar a img {
   width: 20px;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .navbar a p {
-  margin: 0; 
+  margin: 0;
 }
 
 .navbar input {
@@ -91,25 +88,23 @@ nav.dark {
   width: 80px;
 }
 
-.dropcommunity-toggle{
+.dropcommunity-toggle {
   display: flex;
   cursor: pointer;
   margin-bottom: 10px;
 }
 
-.dropcommunity-toggle img{
+.dropcommunity-toggle img {
   margin-right: 10px;
-  
 }
 
-.dropcommunity-menu{
+.dropcommunity-menu {
   transition: max-height 2s ease-out, opacity 2s ease-out;
   display: flex;
   gap: 10px;
   flex-direction: column;
   padding-left: 2.1rem;
 }
-
 
 /* Hamburger menu styles */
 .hamburger {
@@ -152,6 +147,10 @@ nav.dark {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
   }
 
   nav {
@@ -184,18 +183,14 @@ nav.dark {
   }
 }
 
-
-
-
 /* Hub Styles */
-
 .hub {
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   height: 100%;
-  background-color: black; 
+  background-color: black;
   padding: 10px;
   color: #F5F5F5;
   overflow-y: auto;
@@ -203,7 +198,7 @@ nav.dark {
 }
 
 .hub.dark {
-  background-color: black; 
+  background-color: black;
   color: #F5F5F5;
 }
 
@@ -212,20 +207,19 @@ nav.dark {
   align-items: center;
   margin-left: auto;
   justify-content: space-between;
-  
 }
 
-.drops-downs img{
+.drops-downs img {
   width: 40px;
 }
 
 .drops-downs > * {
-  margin-left: 10px; 
+  margin-left: 10px;
   cursor: pointer;
 }
 
 .drops-downs > *:first-child {
-  margin-left: 0; /* Remove margin for the first child */
+  margin-left: 0;
 }
 
 .drops-downs > * {
@@ -233,24 +227,23 @@ nav.dark {
   background-color: black;
 }
 
-
 .hub-image {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: transform 0.3s, border 0.3s; /* Smooth hover effect for border and scale */
-  border-radius: 10px; 
+  transition: transform 0.3s, border 0.3s;
+  border-radius: 10px;
 }
 
 .hub.dark .hub-image {
-  border: 2px solid #ffffff; 
+  border: 2px solid #ffffff;
 }
 
 .hub-image:hover {
-  transform: scale(1.05); /* Slightly enlarges the image on hover */
-  border-color: #f5f5f5; /* Changes border color on hover */
+  transform: scale(1.05);
+  border-color: #f5f5f5;
 }
 
 .hub-description {
@@ -258,20 +251,20 @@ nav.dark {
   text-align: start;
   margin-bottom: 20px;
   font-size: 1.2rem;
-  color: #d3d3d3; /* Slightly lighter color for the description */
+  color: #d3d3d3;
 }
 
 h2 {
   display: flex;
-  justify-content: center; /* Centers the heading */
+  justify-content: center;
   width: 100%;
   margin: 20px 0;
-  font-size: 1.5rem; /* Larger font size for the heading */
-  border-bottom: 1px solid #f5f5f5; /* Underline for the heading */
-  padding-bottom: 10px; /* Adds padding below the heading */
+  font-size: 1.5rem;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 10px;
 }
 
-/* window styles */
+/* Window styles */
 .main-popup {
   position: fixed;
   top: 50%;
@@ -363,12 +356,10 @@ h2 {
   margin: 4px;
 }
 
-
 .download-block img {
   width: 20px;
   margin-left: 3px;
 }
-
 
 .links-container {
   position: absolute;
@@ -390,90 +381,38 @@ h2 {
   margin-right: 10px;
 }
 
-
-.nft--index{
+.nft--index {
   margin-bottom: 0.5rem;
 }
 
-.traits{
+.traits {
   margin-bottom: 0.5rem;
 }
 
-.nekito, .traits, .name-of-traits, .downloads{
+.nekito, .traits, .name-of-traits, .downloads {
   color: gray;
 }
 
-
 @media (max-width: 768px) {
-  .drops-downs {  
-      flex-wrap: wrap; 
-      justify-content: center;
+  .drops-downs {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .drops-downs img {
-      width: 30px; 
+  .hub-description, .window {
+    text-align: center;
   }
 
-  .drops-downs > * {
-      
-      margin: 5px; 
-      padding: 5px;
+  .nft-block {
+    flex-direction: column;
   }
 
-  .drops-downs > *:last-child {
-      margin-bottom: 0; 
-  }
-
-  .download-block {
-      display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      width: 100%;
+  .window--img, .nft--info {
+    width: 100%;
+    margin: 0;
   }
 
   .download-container {
-      width: 100%;
-      grid-template-columns: 1fr; 
-      gap: 10px;
-  }
-
-  .links-container {
-      position: relative;
-      width: 100%;
-      bottom: auto;
-      right: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 10px; 
+    grid-template-columns: 1fr;
   }
 }
-
-.glitch {
-  font-size: 1.5rem;
-  color: #fff;
-  animation: glitch 0.5s linear infinite;
-}
-
-@keyframes glitch {
-  0%, 100% {
-    text-shadow: -2.5px -2.5px 0 #6b0b7c, 
-            2.5px 2.5px 0 rgb(0, 255, 255);
-  }
-  25% {
-    text-shadow: 2.5px 2.5px 0 #470970, 
-            -2.5px -2.5px 0 rgb(0, 255, 255);
-  }
-  50% {
-    text-shadow: 2.5px -2.5px 0 #4b0981, 
-            -2.5px 2.5px 0 rgb(0, 255, 255);
-  }
-  75% {
-    text-shadow: 2.5px 2.5px 0 #ffee00, 
-            2.5px -2.5px 0 rgb(0, 255, 255);
-  }
-}
-
-
-
-

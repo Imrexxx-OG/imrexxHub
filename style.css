@@ -415,4 +415,8 @@ h2 {
   .download-container {
     grid-template-columns: 1fr;
   }
+
+  .sidebar-open .navbar {
+    width: 70%;
+  }
 }

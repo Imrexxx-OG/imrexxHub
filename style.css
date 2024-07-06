@@ -158,7 +158,8 @@ nav.dark {
   nav {
     position: fixed;
     top: 0;
-    width: 70%;
+    width: 30%;
+    left: -100%;
     height: 100%;
     background-color: black;
     transition: left 0.3s ease;
@@ -170,17 +171,17 @@ nav.dark {
   }
 
   .navbar {
-    display: flex;
+    display: none;
+  }
+
+  .navbar.show {
+    display: flex; /* Show navbar when toggled */
     flex-direction: column;
     gap: 20px;
   }
 
   .navbar.hide {
     display: none;
-  }
-
-  .navbar.show {
-    display: flex;
   }
 }
 

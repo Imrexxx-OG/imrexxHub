@@ -16,11 +16,11 @@ export default function Sidebar() {
     return (
         <nav className="dark">
             <h1 className='glitch'>IMREXX HUB</h1>
-            {/* <div id="hamburger" class="hamburger" onClick={toggleSidebar}>
+            <div id="hamburger" class="hamburger" onClick={toggleSidebar}>
                 <span></span>
                 <span></span>
                 <span></span>
-            </div> */}
+            </div>
             <div className={`navbar ${isSidebarVisible ? 'show' : 'hide'}`}>
                 <input type="text" placeholder="Search" />
                 <Link to="/">

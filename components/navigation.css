@@ -11,6 +11,7 @@
   overflow-y: scroll;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
+  overflow-x: scroll;
 }
 
 

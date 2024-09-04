@@ -6,7 +6,7 @@ export default function Sidebar() {
     const [isCommunity, setIsCommunity] = useState(false);
 
     const toggleSidebar = () => {
-        setIsSidebarVisible(!isSidebarVisible);
+        setIsSidebarVisible(prevState => !prevState);
     };
 
     const toggleCommunity = () => {

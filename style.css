@@ -173,9 +173,9 @@ nav.dark {
     left: 0;
   }
 
-  .navbar {
+  /* .navbar {
     display: none;
-  }
+  } */
 
   .navbar.show {
     display: flex; /* Show navbar when toggled */

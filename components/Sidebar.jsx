@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Sidebar() {
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false)
+export default function Sidebar({isSidebarVisible, toggleSidebar}) {
     const [isCommunity, setIsCommunity] = useState(false);
-
-    const toggleSidebar = () => {
-        setIsSidebarVisible(prevState => !prevState);
-    };
 
     const toggleCommunity = () => {
         setIsCommunity(!isCommunity);
     };
 
     return (
-        <nav className="dark">
+        <nav className={`dark ${isSidebarVisible ? 'sidebar-open' : '' }`}>
             <h1 className='glitch'>IMREXX HUB</h1>
-            <div id="hamburger" class="hamburger" onClick={toggleSidebar}>
+            <div id="hamburger" className="hamburger" onClick={toggleSidebar}>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div className={`navbar ${isSidebarVisible ? 'show' : 'hide'}`}>
+            <div className="navbar">
                 <input type="text" placeholder="Search" />
                 <Link to="/">
                     <img src="https://img.icons8.com/?size=100&id=2797&format=png&color=ffffff" alt="Home" />

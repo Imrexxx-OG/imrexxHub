@@ -8,13 +8,21 @@ import Pool from './components/Pool';
 import Home from './components/Home';
 import Send from './components/Send';
 import Airdrop from './components/Airdrop';
+import MobileMenu from './components/MobileMenu';
 
 
 export default function App() {
+    const [isSidebarVisible, setIsSidebarVisible] = React.useState(false);
+
+    function toggleSidebar() {
+        setIsSidebarVisible(sidebar => !isSidebarVisible);
+    }
 
     return (
         <div className="container dark">
-            <Sidebar />
+            <MobileMenu isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
+            
+            <Sidebar isSidebarVisible={isSidebarVisible} toggleSidebar={toggleSidebar} />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/showcase" element={<Showcase />} />

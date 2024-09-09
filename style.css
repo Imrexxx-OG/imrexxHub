@@ -117,7 +117,7 @@ nav.dark {
   margin: 10px;
 }
 
-.hamburger span {
+/* .hamburger span {
   display: block;
   height: 3px;
   width: 25px;
@@ -136,7 +136,7 @@ nav.dark {
 
 .sidebar-open .hamburger span:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
-}
+} */
 
 .overlay {
   display: none;
@@ -173,19 +173,6 @@ nav.dark {
     left: 0;
   }
 
-  /* .navbar {
-    display: none;
-  } */
-
-  .navbar.show {
-    display: flex; /* Show navbar when toggled */
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* .navbar.hide {
-    display: none;
-  } */
 }
 
 
@@ -475,4 +462,92 @@ h2 {
     text-shadow: 2.5px 2.5px 0 #ffee00, 
             2.5px -2.5px 0 rgb(0, 255, 255);
   }
+}
+
+/* clevermissfox changes */
+.btn-open-menu { display: none;}
+
+@media (max-width: 768px) {
+
+
+  .btn-open-menu {
+    display: grid;
+    gap: 0.25em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    border: 0; 
+    background: transparent;
+    font: inherit;
+
+    & > span {
+      display: block;
+      height: 3px;
+      width: 25px;
+      background-color: aqua;
+      transition: all 0.3s;
+    }
+  }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      --bar-width: 25px;
+      --bar-height: 3px;
+      --hamburger-gap: 10px;
+      --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+      --x-width: calc(var(--hamburger-height) * 1.41421356297);
+    
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: var(--hamburger-gap);
+      margin: 10px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 70%;
+    left: -100%;
+    height: 100%;
+    background-color: black;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar-open {
+    left: 0;
+    width: min(100%, 300px);
+
+    & input[type=text] {
+      width: min(100%, 12rem);
+    }
+  }
+    
+    .hamburger span {
+      display: block;
+      height: var(--bar-height);
+      width: var(--bar-width);
+      background-color: aqua;
+      transform-origin: left center;
+      transition: all 0.3s;
+    }
+    
+     .sidebar-open .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translateY(calc(var(--bar-height) / -2));
+      width: var(--x-width);
+    }
+    
+     .sidebar-open .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    
+     .sidebar-open .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translateY(calc(var(--bar-height) / 2));  
+      width: var(--x-width);
+    }
 }

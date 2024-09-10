@@ -414,17 +414,32 @@ h2 {
       margin-bottom: 0; 
   }
   .main-popup {
-    position: fixed;
     top: 5em;
     left: 2em;
     bottom: 2em;
     transform: translate(-10%, -10%);
-    height: 80%;
-  
+    width: 90%;
+    max-height: 90vh; /* Limit popup height on smaller screens */
+    overflow-y: auto; 
   }
 
   .window{
-    height: 100%;
+    max-height: 100%; /* Ensure the window fits in popup */
+    overflow-y: auto; /* Allow scrolling inside the window */
+  }
+
+  .nft-block {
+    flex-direction: column; /* Stack content vertically on small screens */
+    justify-content: center;
+  }
+
+  .window--img {
+    width: 100%; /* Make the image responsive */
+    margin: 0 0 1rem 0; /* Adjust spacing */
+  }
+
+  .nft--info {
+    width: 100%; /* Make the info section responsive */
   }
 
   .download-block {

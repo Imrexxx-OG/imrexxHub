@@ -415,9 +415,10 @@ h2 {
   }
   .main-popup {
     position: fixed;
-    top: 2em;
+    top: 5em;
     left: 2em;
     transform: translate(-10%, -10%);
+    height: 70%;
   
   }
 

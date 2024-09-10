@@ -4,7 +4,7 @@ export default function Window({ onClose }) {
     return (
         <div className="main-popup dark">
             <button onClick={onClose} className="close-button">Close</button>
-            <div className="window dark">
+            <div className="window">
                 <div className="nft-block">
                     <img
                         src="https://moccasin-wrong-prawn-350.mypinata.cloud/ipfs/QmRz1E4UFXgFBQZLiT3HTmKpTX26ctQ47NDMFjx4LHcRjo"

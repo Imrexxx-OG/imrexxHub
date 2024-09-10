@@ -417,9 +417,14 @@ h2 {
     position: fixed;
     top: 5em;
     left: 2em;
+    bottom: 2em;
     transform: translate(-10%, -10%);
-    height: 70%;
+    height: 80%;
   
+  }
+
+  .window{
+    height: 70%;
   }
 
   .download-block {

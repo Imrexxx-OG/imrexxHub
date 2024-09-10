@@ -413,6 +413,13 @@ h2 {
   .drops-downs > *:last-child {
       margin-bottom: 0; 
   }
+  .main-popup {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    transform: translate(-10%, -10%);
+  
+  }
 
   .download-block {
       display: flex;

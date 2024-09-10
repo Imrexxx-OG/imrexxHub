@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Window({ onClose }) {
     return (
-        <div className="main-popup dark">
+        <div className="main-popup">
             <button onClick={onClose} className="close-button">Close</button>
             <div className="window">
                 <div className="nft-block">

@@ -44,25 +44,27 @@ export default function Stake() {
                     onChange={handleSearchChange}
                     className="search-input"
                 />
-                <div className="validator-table">
-                    <div className="table-header">
-                        <div className="table-column">Validator</div>
-                        <div className="table-column">Voting Power</div>
-                        <div className="table-column">%Share</div>
-                        <div className="table-column">Commission</div>
-                        <div className="table-column">Uptime</div>
-                        <div className="table-column">Status</div>
-                    </div>
-                    {validators.map((validator, index) => (
-                        <div className="table-row" key={index}>
-                            <div className="table-column">{validator.name}</div>
-                            <div className="table-column">{validator.votingPower}</div>
-                            <div className="table-column">{validator.share}</div>
-                            <div className="table-column">{validator.commission}</div>
-                            <div className="table-column">{validator.uptime}</div>
-                            <div className="table-column">{validator.status}</div>
+                <div className="table-container">
+                    <div className="validator-table">
+                        <div className="table-header">
+                            <div className="table-column">Validator</div>
+                            <div className="table-column">Voting Power</div>
+                            <div className="table-column">%Share</div>
+                            <div className="table-column">Commission</div>
+                            <div className="table-column">Uptime</div>
+                            <div className="table-column">Status</div>
                         </div>
-                    ))}
+                        {validators.map((validator, index) => (
+                            <div className="table-row" key={index}>
+                                <div className="table-column">{validator.name}</div>
+                                <div className="table-column">{validator.votingPower}</div>
+                                <div className="table-column">{validator.share}</div>
+                                <div className="table-column">{validator.commission}</div>
+                                <div className="table-column">{validator.uptime}</div>
+                                <div className="table-column">{validator.status}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

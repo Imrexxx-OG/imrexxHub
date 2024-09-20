@@ -526,9 +526,23 @@ button:disabled {
   color: #fff; 
 }
 
+.table-container {
+  width: 100%;
+  overflow-x: auto; 
+}
+
 .validator-table {
   width: 100%;
   border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1rem; 
+}
+
+.validator-table th, 
+.validator-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 
 .table-header {
@@ -558,6 +572,47 @@ button:disabled {
 .table-row .table-column {
   flex: 1;
   padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .validator-table {
+    font-size: 0.9rem; /* Decrease font size on smaller screens */
+  }
+
+  .validator-table th, 
+  .validator-table td {
+    padding: 8px;
+  }
+  
+  /* Stack the table rows on very small screens */
+  @media (max-width: 480px) {
+    .validator-table, .validator-table th, .validator-table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .validator-table tr {
+      display: block;
+      margin-bottom: 10px; /* Space between rows */
+    }
+
+    .validator-table th {
+      text-align: right;
+      position: relative;
+      padding-right: 50%;
+    }
+  
+    .validator-table th::after {
+      content: ":";
+      position: absolute;
+      right: 10px;
+    }
+  
+    .validator-table td {
+      text-align: left;
+      padding-left: 50%;
+    }
+  }
 }
 
 /* Governance.css */

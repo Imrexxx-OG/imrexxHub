@@ -28,23 +28,25 @@ export default function Governance() {
                 <p className="governance-description">
                     Participate in the governance of the network by reviewing and voting on active proposals. Your participation helps shape the future of the network.
                 </p>
-                <div className="proposal-table">
-                    <div className="proposal-table-header">
-                        <div className="proposal-table-column">Proposal</div>
-                        <div className="proposal-table-column">Description</div>
-                        <div className="proposal-table-column">Type</div>
-                        <div className="proposal-table-column">End Date</div>
-                        <div className="proposal-table-column">Status</div>
-                    </div>
-                    {proposals.map((proposal) => (
-                        <div className="proposal-table-row" key={proposal.id}>
-                            <div className="proposal-table-column">{proposal.title}</div>
-                            <div className="proposal-table-column">{proposal.description}</div>
-                            <div className="proposal-table-column">{proposal.type}</div>
-                            <div className="proposal-table-column">{proposal.endDate}</div>
-                            <div className="proposal-table-column">{proposal.status}</div>
+                <div className='governance-table-container'>
+                    <div className="proposal-table">
+                        <div className="proposal-table-header">
+                            <div className="proposal-table-column">Proposal</div>
+                            <div className="proposal-table-column">Description</div>
+                            <div className="proposal-table-column">Type</div>
+                            <div className="proposal-table-column">End Date</div>
+                            <div className="proposal-table-column">Status</div>
                         </div>
-                    ))}
+                        {proposals.map((proposal) => (
+                            <div className="proposal-table-row" key={proposal.id}>
+                                <div className="proposal-table-column">{proposal.title}</div>
+                                <div className="proposal-table-column">{proposal.description}</div>
+                                <div className="proposal-table-column">{proposal.type}</div>
+                                <div className="proposal-table-column">{proposal.endDate}</div>
+                                <div className="proposal-table-column">{proposal.status}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

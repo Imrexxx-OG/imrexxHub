@@ -32,6 +32,7 @@ a {
   display: inline;
 }
 
+
 /* Sidebar Styles */
 nav {
   padding: 10px;
@@ -72,6 +73,11 @@ nav {
   margin: 0;
 }
 
+.navbar a p:hover {
+  color: aqua;
+  font-weight: bold;
+}
+
 .navbar input {
   display: block;
   padding: 5px;
@@ -107,6 +113,11 @@ nav.dark {
   gap: 10px;
   flex-direction: column;
   padding-left: 2.1rem;
+}
+
+.dropcommunity-toggle p, a:hover {
+  color: aqua;
+  font-weight: bold;
 }
 
 /* Hamburger menu styles */

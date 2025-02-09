@@ -17,17 +17,20 @@ const Home = () => {
 
                 <section id="intro" className="intro-section">
                     <p className='intro-p'>
-                        <strong>IMREXX HUB</strong> is a Meter-Mainnet HUB frontend that provides users with centralized access to all critical on-chain information and more. 
+                        <strong>IMREXX HUB</strong> is a decentralized frontend HUB that provides users with centralized access to all critical on-chain information and more. 
                         Our platform features various components, including:
                     </p>
-                    <ul>
-                        <li><strong>NFT Showcase:</strong> Discover and preview our exclusive NFT launch on Meter Mainnet.</li>
-                        <li><strong>Send:</strong> Transfer coins from one network to another effortlessly.</li>
-                        <li><strong>Stake:</strong> Delegate your MTRG tokens to validators and earn passive income.</li>
-                        <li><strong>Pool:</strong> Provide liquidity to pools and earn MTRG tokens.</li>
-                        <li><strong>Governance:</strong> Participate in network governance by reviewing and voting on proposals.</li>
-                        <li><strong>Airdrop:</strong> Join our community for exciting MTRG token airdrops.</li>
-                    </ul>
+                    <div>
+                        {/* <img src='../rem-archive/rem-smile-maid.png' className="rem-kawaii" alt="rem-being-cute" /> */}
+                        <ul>
+                            <li><strong>NFT Showcase:</strong> Discover and preview our exclusive NFT launch on Meter Mainnet.</li>
+                            <li><strong>Send:</strong> Transfer coins from one network to another effortlessly.</li>
+                            <li><strong>Stake:</strong> Delegate your MTRG tokens to validators and earn passive income.</li>
+                            <li><strong>Pool:</strong> Provide liquidity to pools and earn MTRG tokens.</li>
+                            <li><strong>Governance:</strong> Participate in network governance by reviewing and voting on proposals.</li>
+                            <li><strong>Airdrop:</strong> Join our community for exciting MTRG token airdrops.</li>
+                        </ul>
+                    </div>
                     <p>
                         Stay tuned for more updates and features as we continue to grow and enhance the ImRexx Hub platform. Thank you for being a part of our journey!
                     </p>

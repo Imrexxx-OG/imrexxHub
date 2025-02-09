@@ -36,6 +36,11 @@
   margin-bottom: 6em;
 }
 
+.rem-kawaii{
+  width: 100px;
+  display: inline;
+}
+
 .hero-section {
   display: flex;
   flex-wrap: wrap;

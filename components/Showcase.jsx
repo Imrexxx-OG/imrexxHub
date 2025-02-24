@@ -38,7 +38,7 @@ export default function Showcase() {
             </div>
             <WalletConnection />
             <h2>#IMREXX SHOWCASE</h2>
-            <p className="hub-description">We're excited to give you a sneak peek into our exclusive NFT collection, soon to be launched on the Meter Mainnet. Click on an image for more details.</p>
+            <p className="hub-description">We're excited to give you a sneak peek into our exclusive NFT collection, soon to be launched on the Lukso Mainnet. Click on an image for more details.</p>
             {images.map((image, index) => (
                 <img
                     key={index}

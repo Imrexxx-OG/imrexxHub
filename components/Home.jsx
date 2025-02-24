@@ -23,12 +23,12 @@ const Home = () => {
                     <div>
                         {/* <img src='../rem-archive/rem-smile-maid.png' className="rem-kawaii" alt="rem-being-cute" /> */}
                         <ul>
-                            <li><strong>NFT Showcase:</strong> Discover and preview our exclusive NFT launch on Meter Mainnet.</li>
+                            <li><strong>NFT Showcase:</strong> Discover and preview our exclusive NFT launch on Lukso Mainnet.</li>
                             <li><strong>Send:</strong> Transfer coins from one network to another effortlessly.</li>
-                            <li><strong>Stake:</strong> Delegate your MTRG tokens to validators and earn passive income.</li>
-                            <li><strong>Pool:</strong> Provide liquidity to pools and earn MTRG tokens.</li>
+                            <li><strong>Stake:</strong> Delegate your LYX tokens to validators and earn passive income.</li>
+                            <li><strong>Pool:</strong> Provide liquidity to pools and earn LYX tokens.</li>
                             <li><strong>Governance:</strong> Participate in network governance by reviewing and voting on proposals.</li>
-                            <li><strong>Airdrop:</strong> Join our community for exciting MTRG token airdrops.</li>
+                            <li><strong>Airdrop:</strong> Join our community for exciting LYX token airdrops.</li>
                         </ul>
                     </div>
                     <p>

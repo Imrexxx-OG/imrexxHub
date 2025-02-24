@@ -9,7 +9,7 @@ const Home = () => {
                 <section id="hero" className="hero-section">
                     <div>
                         <h1>IMREXX HUB</h1>
-                        <p>Your central access point to all things Meter Mainnet. </p>
+                        <p>Your central access point to all things Lukso Mainnet. </p>
                     </div>
                     <div className="wallet-connection"><WalletConnection /></div>
                     

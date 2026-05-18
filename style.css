@@ -1,0 +1,170 @@
+/* ─────────────────────────────────────────────
+   style.css — Global layout foundation
+   Fixes: white-space bleed, flex containment,
+   page overflow, mobile menu positioning
+───────────────────────────────────────────── */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', monospace, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* ── ROOT CONTAINER ─────────────────────── */
+/* This is the top-level flex row: sidebar | main */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;       /* contain everything — no page-level scroll */
+    position: relative;
+}
+
+.container.dark {
+    background-color: #000; /* was #282D35 — that was causing the grey bleed */
+    color: #fff;
+}
+
+/* ── MAIN CONTENT AREA ──────────────────── */
+/* Takes all remaining space after the sidebar */
+.app-main {
+    flex: 1;                /* fill remaining horizontal space */
+    min-width: 0;           /* prevent flex blowout on wide content */
+    height: 100%;           /* fill full height */
+    overflow-y: auto;       /* scroll happens here, not on body */
+    overflow-x: hidden;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Every page component sits inside app-main */
+/* .page is defined in pages.css but min-height needs to be % not vh */
+/* Override here so it doesn't overflow the flex container */
+.page {
+    min-height: 100% !important;
+    flex: 1;
+}
+
+/* home-wrapper also needs this */
+.home-wrapper {
+    min-height: 100% !important;
+    flex: 1;
+}
+
+/* ── BUTTON RESET ───────────────────────── */
+button:focus { outline: none; }
+
+/* ── LINK RESET ─────────────────────────── */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ── GLITCH ANIMATION ───────────────────── */
+/* Kept only for the sidebar logo */
+.glitch {
+    color: #fff;
+    animation: glitch 0.5s linear infinite;
+}
+
+@keyframes glitch {
+    0%,  100% { text-shadow: -2.5px -2.5px 0 #6b0b7c, 2.5px 2.5px 0 cyan; }
+    25%        { text-shadow:  2.5px  2.5px 0 #470970, -2.5px -2.5px 0 cyan; }
+    50%        { text-shadow:  2.5px -2.5px 0 #4b0981, -2.5px  2.5px 0 cyan; }
+    75%        { text-shadow:  2.5px  2.5px 0 #ffd700,  2.5px -2.5px 0 cyan; }
+}
+
+/* ── MOBILE MENU BUTTON ─────────────────── */
+.btn-open-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .btn-open-menu {
+        display: grid;
+        gap: 5px;
+        position: fixed;     /* fixed so it stays above everything */
+        top: 14px;
+        left: 14px;
+        z-index: 1100;
+        padding: 8px;
+        background: rgba(0,0,0,0.85);
+        border: 1px solid rgba(255,255,255,0.12);
+        cursor: pointer;
+    }
+
+    .btn-open-menu > span {
+        display: block;
+        height: 2px;
+        width: 22px;
+        background-color: #00e5ff;
+        border-radius: 1px;
+    }
+
+    /* On mobile, main needs top padding so content isn't under the menu button */
+    .app-main {
+        padding-top: 0;
+    }
+}
+
+/* ── HIDE SCROLLBAR (keep scroll functional) ── */
+/* Applies to the main content area */
+.app-main {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE / Edge */
+}
+.app-main::-webkit-scrollbar {
+    display: none;               /* Chrome / Safari */
+}
+
+/* Also hide on individual pages that scroll internally */
+.page,
+.home-wrapper {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.page::-webkit-scrollbar,
+.home-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── GLOBAL SCROLLBAR HIDE ─────────────────
+   Covers ALL containers including any that
+   still import navigation.css (.myContainer,
+   .wrapper, .hub, .pool-container etc.)
+────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Also override any legacy overflow:scroll from navigation.css */
+.myContainer,
+.wrapper,
+.hub,
+.pool-container,
+.stake-container,
+.governance-main-container,
+.airdrop-container,
+.send-container {
+    overflow-y: auto !important;
+}

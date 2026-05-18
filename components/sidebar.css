@@ -1,0 +1,186 @@
+/* sidebar.css */
+:root {
+    --aqua:        #00e5ff;
+    --aqua-dim:    rgba(0,229,255,0.10);
+    --aqua-border: rgba(0,229,255,0.32);
+    --muted:       rgba(255,255,255,0.40);
+    --mid:         rgba(255,255,255,0.70);
+    --border-dim:  rgba(255,255,255,0.07);
+    --border-mid:  rgba(255,255,255,0.13);
+}
+
+/* ── NAV SHELL ──────────────────────────── */
+.sb {
+    position: relative;
+    width: 200px;
+    flex-shrink: 0;
+    height: 100%;
+    background: #000;
+    border-right: 1px solid var(--border-dim);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    transition: left 0.28s ease;
+    box-sizing: border-box;
+}
+
+/* ── LOGO ───────────────────────────────── */
+.sb-logo {
+    padding: 24px 16px 16px;
+    border-bottom: 1px solid var(--border-dim);
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.sb-logo__text {
+    font-family: 'Cyberpunk Is Not Dead', sans-serif;
+    font-size: 1.15rem;
+    color: #fff;
+    letter-spacing: 0.06em;
+    margin: 0;
+    line-height: 1;
+    border-bottom: none;
+    padding-bottom: 0;
+    width: auto;
+    justify-content: flex-start;
+}
+
+.sb-logo__sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    color: var(--aqua);
+    font-weight: 700;
+}
+
+/* ── CLOSE (mobile only) ────────────────── */
+.sb-close {
+    display: none;
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+}
+
+/* ── SEARCH ─────────────────────────────── */
+
+
+
+.sb-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.18s, background 0.18s;
+    border-left: 2px solid transparent;
+}
+
+.sb-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.04);
+}
+
+.sb-link--active {
+    color: var(--aqua);
+    background: var(--aqua-dim);
+    border-left-color: var(--aqua);
+}
+
+.sb-link--active:hover { color: var(--aqua); }
+
+.sb-link__icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.55;
+    flex-shrink: 0;
+    transition: opacity 0.18s;
+}
+
+.sb-link:hover .sb-link__icon,
+.sb-link--active .sb-link__icon { opacity: 1; }
+
+.sb-link__label { flex: 1; }
+
+.sb-link__pip {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--aqua);
+    box-shadow: 0 0 5px var(--aqua);
+    flex-shrink: 0;
+}
+
+/* ── COMMUNITY DROPDOWN ─────────────────── */
+
+
+
+
+
+
+/* ── SIDEBAR FOOTER ─────────────────────── */
+.sb-footer {
+    padding: 14px 14px;
+    border-top: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sb-footer__text {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.sb-footer__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--aqua);
+    box-shadow: 0 0 5px var(--aqua);
+    animation: sbpulse 2s ease-in-out infinite;
+}
+
+@keyframes sbpulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+
+/* ── OVERLAY (mobile) ───────────────────── */
+.sb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 999;
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 768px) {
+    .sb {
+        position: fixed;
+        top: 0;
+        left: -220px;
+        height: 100%;
+        width: 200px;
+        z-index: 1001;
+    }
+
+    .sb--open { left: 0; }
+    .sb-close { display: block; }
+    .sb-overlay { display: block; }
+}

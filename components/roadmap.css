@@ -1,0 +1,378 @@
+/* roadmap.css */
+
+/* ── PAGE LAYOUT ────────────────────────── */
+.rm-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ── OVERALL PROGRESS (header) ──────────── */
+.rm-overall {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    min-width: 160px;
+}
+
+.rm-overall__pct {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--aqua);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.rm-overall__label {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+}
+
+.rm-overall__bar {
+    width: 160px;
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    position: relative;
+}
+
+.rm-overall__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--aqua);
+    transition: width 0.8s ease;
+}
+
+/* ── TIMELINE ───────────────────────────── */
+.rm-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── PHASE ──────────────────────────────── */
+.rm-phase {
+    position: relative;
+    padding-left: 52px;
+    padding-bottom: 8px;
+}
+
+/* Vertical connector line */
+.rm-phase__connector {
+    position: absolute;
+    left: 17px;
+    top: 40px;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,0.08);
+}
+
+.rm-phase--complete .rm-phase__connector { background: rgba(0,255,136,0.2); }
+.rm-phase--active   .rm-phase__connector { background: rgba(0,229,255,0.2); }
+
+/* ── PHASE HEADER ───────────────────────── */
+.rm-phase__header {
+    width: 100%;
+    background: #080808;
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px 16px 0;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+.rm-phase__header:hover {
+    background: #0e0e0e;
+    border-color: rgba(255,255,255,0.12);
+}
+
+.rm-phase--complete .rm-phase__header:hover { border-color: rgba(0,255,136,0.22); }
+.rm-phase--active   .rm-phase__header:hover { border-color: rgba(0,229,255,0.22); }
+
+/* Phase node (number circle) */
+.rm-phase__node {
+    position: absolute;
+    left: -44px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.rm-phase--complete .rm-phase__node { background: rgba(0,255,136,0.08); }
+.rm-phase--active   .rm-phase__node { background: rgba(0,229,255,0.08); box-shadow: 0 0 12px rgba(0,229,255,0.2); }
+
+.rm-phase__head-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 16px;
+}
+
+.rm-phase__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.rm-phase__title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+
+.rm-phase__period {
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.28);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.rm-phase__meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rm-phase__status-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+}
+
+.rm-phase__count {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.28);
+    font-weight: 700;
+}
+
+/* Progress bar inside header */
+.rm-phase__bar {
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    margin-top: 2px;
+}
+
+.rm-phase__bar-fill {
+    height: 100%;
+    transition: width 0.6s ease;
+}
+
+.rm-phase__chevron {
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 300;
+    padding-right: 2px;
+    flex-shrink: 0;
+}
+
+/* ── PHASE BODY (expanded) ──────────────── */
+.rm-phase__body {
+    background: #050505;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-top: none;
+    padding: 20px 20px 20px 34px;
+    margin-bottom: 16px;
+    animation: rmBodyIn 0.2s ease;
+}
+
+@keyframes rmBodyIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.rm-phase__summary {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.45);
+    margin: 0 0 18px;
+}
+
+/* ── MILESTONES ─────────────────────────── */
+.rm-milestones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.rm-milestone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: #080808;
+    transition: background 0.15s;
+}
+
+.rm-milestone:last-child { border-bottom: none; }
+.rm-milestone:hover { background: #0d0d0d; }
+
+.rm-milestone--done { opacity: 1; }
+.rm-milestone:not(.rm-milestone--done) { opacity: 0.55; }
+
+.rm-milestone__icon {
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    width: 16px;
+    text-align: center;
+}
+
+.rm-milestone__label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+.rm-milestone--done .rm-milestone__label { color: #fff; }
+
+/* ── RIGHT SIDEBAR ──────────────────────── */
+.rm-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 20px;
+}
+
+/* Legend */
+.rm-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rm-legend__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rm-legend__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.rm-legend__label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+}
+
+/* Tech stack panel */
+.rm-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.rm-stack__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.rm-stack__row:last-child { border-bottom: none; }
+
+.rm-stack__key {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    white-space: nowrap;
+}
+
+.rm-stack__val {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-align: right;
+    letter-spacing: 0.04em;
+}
+
+/* Why Lukso panel */
+.rm-why {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.rm-why__text {
+    font-size: 0.76rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.48);
+}
+
+.rm-why__link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: var(--aqua);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.rm-why__link:hover { opacity: 0.7; }
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 900px) {
+    .rm-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .rm-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .rm-why { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+    .rm-overall { align-items: flex-start; }
+    .rm-overall__bar { width: 100%; }
+    .rm-phase { padding-left: 44px; }
+    .rm-phase__node { left: -36px; width: 28px; height: 28px; font-size: 0.58rem; }
+    .rm-phase__connector { left: 13px; }
+    .rm-sidebar { grid-template-columns: 1fr; }
+}

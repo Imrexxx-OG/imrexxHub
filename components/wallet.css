@@ -1,0 +1,171 @@
+/* wallet.css */
+
+.wc {
+    position: relative;
+    display: inline-block;
+}
+
+/* ── CONNECT BUTTON ─────────────────────── */
+.wc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+    border: 1px solid;
+    padding: 0;
+}
+
+/* Not connected */
+.wc-btn--connect {
+    font-size: 0.68rem;
+    padding: 10px 18px;
+    background: rgba(0,229,255,0.08);
+    border-color: rgba(0,229,255,0.32);
+    color: #00e5ff;
+}
+
+.wc-btn--connect:hover {
+    background: rgba(0,229,255,0.15);
+    border-color: rgba(0,229,255,0.55);
+}
+
+.wc-btn__icon {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Connected */
+.wc-btn--connected {
+    font-size: 0.68rem;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+}
+
+.wc-btn--connected:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.22);
+    color: #fff;
+}
+
+.wc-btn__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 5px #00ff88;
+    flex-shrink: 0;
+    animation: wcpulse 2.5s ease-in-out infinite;
+}
+
+@keyframes wcpulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+.wc-btn__addr {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.04em;
+}
+
+.wc-btn__chevron {
+    font-size: 0.5rem;
+    opacity: 0.5;
+    margin-left: 2px;
+}
+
+/* ── DROPDOWN MENU ──────────────────────── */
+.wc-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: #0c0c0c;
+    border: 1px solid rgba(255,255,255,0.12);
+    min-width: 200px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    animation: wcMenuIn 0.15s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+@keyframes wcMenuIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.wc-menu__network {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.38);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.wc-menu__net-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00ff88;
+    flex-shrink: 0;
+}
+
+.wc-menu__addr {
+    padding: 10px 14px;
+    font-size: 0.72rem;
+    font-family: 'Courier New', monospace;
+    color: rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    letter-spacing: 0.04em;
+}
+
+.wc-menu__item {
+    background: transparent;
+    border: none;
+    padding: 11px 14px;
+    font-family: inherit;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+}
+
+.wc-menu__item:hover {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+}
+
+.wc-menu__item--danger { color: rgba(255,77,77,0.7); }
+.wc-menu__item--danger:hover { color: #ff4d4d; background: rgba(255,77,77,0.06); }
+
+/* ── VARIANTS ───────────────────────────── */
+
+/* Hero variant — slightly bigger */
+.wc--hero .wc-btn--connect {
+    font-size: 0.75rem;
+    padding: 12px 22px;
+}
+
+.wc--hero .wc-btn--connected {
+    font-size: 0.72rem;
+    padding: 10px 18px;
+}
+
+/* Strip variant — sits in a tight header row */
+.wc--strip .wc-btn {
+    font-size: 0.62rem;
+    padding: 7px 13px;
+}

@@ -1,0 +1,49 @@
+/* stake-upgrade.css */
+.stake-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.td-num {
+    color: rgba(255,255,255,0.25) !important;
+    font-size: 0.72rem !important;
+    width: 32px;
+}
+
+.td-name {
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.td-unit {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.1em;
+    margin-left: 3px;
+}
+
+.td-commission { color: var(--aqua) !important; font-weight: 700; }
+
+.row--inactive { opacity: 0.5; }
+
+.stake-btn {
+    font-size: 0.6rem !important;
+    padding: 6px 12px !important;
+    white-space: nowrap;
+}
+
+.btn--disabled {
+    opacity: 0.25 !important;
+    pointer-events: none;
+}
+
+.empty-state {
+    padding: 48px;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-top: none;
+}
